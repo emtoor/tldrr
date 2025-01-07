@@ -1,0 +1,139 @@
+Metadata-Version: 2.1
+Name: tldrr
+Version: 1.0.2
+Summary: A CLI tool that extends TLDR with GPT-generated examples
+Author: Danny
+Author-email: emtoor@gmail.com
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: openai
+
+tldrr – Enhanced TLDR with GPT-Powered Examples
+
+tldrr is a command-line tool that extends the functionality of the popular tldr command by providing enhanced, GPT-generated examples for command-line tools. It queries tldr to get concise command examples and supplements them with additional, more detailed scenarios powered by OpenAI’s GPT models.
+
+🚀 Features
+    •    Concise tldr-Style Output – GPT responses are formatted to match the tldr style for easy readability.
+    •    Interactive Mode – Users can request additional examples (y/n prompt) until satisfied.
+    •    Caching – Results are cached for 30 days to reduce redundant API calls and improve performance.
+    •    Seamless Integration – Works like the tldr command but with added AI-driven insights.
+    •    Configurable – Users can clear the cache or disable GPT-enhanced examples for offline use.
+
+🛠️ Installation
+
+1. Clone the Repository
+
+git clone https://github.com/yourusername/tldrr.git
+cd tldrr
+
+2. Install the Tool Locally
+
+pip install .
+
+3. Ensure tldr is Installed
+
+sudo apt install tldr  # Ubuntu/Debian
+brew install tldr      # macOS
+scoop install tldr     # Windows
+
+🔑 API Key Setup
+
+tldrr uses the OpenAI API to generate enhanced examples.
+    1.    Get your API key from https://platform.openai.com/.
+    2.    Export the API key as an environment variable:
+
+export OPENAI_API_KEY="your_api_key_here"
+
+    3.    Add the export line to your .bashrc or .zshrc to make it persistent:
+
+echo 'export OPENAI_API_KEY="your_api_key_here"' >> ~/.bashrc
+source ~/.bashrc
+
+📦 Usage
+
+Basic Command
+
+tldrr <command>
+
+Example:
+
+tldrr tcpdump
+
+    •    This queries tldr for tcpdump and enhances the output with additional GPT-generated examples.
+
+Prompt for More Examples
+
+Would you like more examples? (y/n):
+
+    •    Press y to fetch more examples.
+    •    Press n to exit the loop.
+
+Clear Cache
+
+tldrr --clear-cache
+
+    •    This clears cached tldr and GPT results.
+
+🧑‍💻 Example Output
+
+tldrr ls
+
+--- TLDR Output ---
+
+- List files in the current directory:
+    ls
+
+- List all files, including hidden ones:
+    ls -a
+
+--- Enhanced Examples from GPT ---
+
+- List files sorted by size:
+    ls -lS
+
+- List files by modification time:
+    ls -lt
+
+Would you like more examples? (y/n): y
+
+--- Additional Examples from GPT ---
+
+- List directories only:
+    ls -d */
+
+- List files recursively in subdirectories:
+    ls -R
+
+⚙️ Configuration Options
+    •    Cache Expiry – Cached results expire after 30 days by default.
+    •    Offline Mode – If GPT is unavailable, the script falls back to tldr results.
+    •    Interactive Prompt – Users can continuously query GPT for more examples or stop when satisfied.
+
+🐛 Troubleshooting
+    •    Command Not Found: Ensure tldr is installed and in your system’s PATH.
+    •    Invalid API Key: Double-check your OpenAI API key and re-export it.
+    •    Repeating GPT Results: The script dynamically prompts GPT for new examples to avoid redundancy.
+
+🌟 Why Use tldrr?
+    •    Advanced Learning – Get more comprehensive command-line examples beyond standard tldr outputs.
+    •    Saves Time – Quickly grasp complex command-line options with curated, GPT-driven insights.
+    •    Interactive and Scalable – Request as much or as little detail as you need.
+
+📜 License
+
+This project is licensed under the MIT License.
+
+🤝 Contributing
+
+Contributions are welcome! Please submit issues or pull requests to enhance the tool further.
+
+🗂️ Future Improvements
+    •    Batch Mode – Support querying multiple commands at once.
+    •    Command History – Track previously queried commands.
+    •    Offline GPT Cache – Save GPT results for offline access.
+
+📧 Contact
+
+For questions or collaboration, feel free to reach out at your.email@example.com or open an issue on GitHub.
+
+Would you like to add GitHub Action workflows to automate releases or testing for this project?

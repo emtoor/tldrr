@@ -1,0 +1,12 @@
+[project]
+name = "tldrr"
+version = "1.0.2"
+description = "A CLI tool that extends TLDR with GPT-generated examples"
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "openai"
+]
+
+[project.scripts]
+tldrr = "tldrr.tldrr:main"
